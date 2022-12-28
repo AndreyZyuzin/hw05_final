@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Подписка {{ request.user }}{% endblock %}
+{% block content %}
+  <h1>Подписка {{ request.user.get_full_name }}</h1>
+    {% include 'includes/switcher.html' with follow=True %}
+    {% for post in page_obj %}
+      {% include 'includes/post.html' %}
+      {% if not forloop.last %}<hr>{% endif %}
+    {% endfor %}
+    {% include 'includes/paginator.html' %}
+{% endblock %}
