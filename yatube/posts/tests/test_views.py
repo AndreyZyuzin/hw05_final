@@ -289,7 +289,7 @@ class FollowTests(TestCase):
         )
 
     def test_authorized_user_can_follow_other_users_and_remove(self):
-        """Авторизованный пользователь может подписываться 
+        """Авторизованный пользователь может подписываться
            на других пользователей и удалять их из подписок."""
         reverse_name = reverse('posts:profile',
                                kwargs={'username': self.AUTHOR_NAME})

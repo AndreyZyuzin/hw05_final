@@ -141,7 +141,6 @@ def profile_follow(request, username):
         User.objects.select_related(),
         username=username
     )
-    print('*'*40, author.id, request.user.id)
     if (author != request.user and not
             Follow.objects.filter(user=request.user, author=author).exists()):
         Follow.objects.create(
