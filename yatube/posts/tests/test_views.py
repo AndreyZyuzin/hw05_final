@@ -288,46 +288,55 @@ class FollowTests(TestCase):
             user=self.user_2,
         )
 
-    def test_authorized_user_can_follow_other_users_and_remove(self):
+    def test_authorized_user_can_follow_other_users(self):
         """Авторизованный пользователь может подписываться
-           на других пользователей и удалять их из подписок."""
-        reverse_name = reverse('posts:profile',
-                               kwargs={'username': self.AUTHOR_NAME})
-        reverse_follow = reverse('posts:profile_follow',
-                                 kwargs={'username': self.AUTHOR_NAME})
-        reverse_unfollow = reverse('posts:profile_unfollow',
-                                   kwargs={'username': self.AUTHOR_NAME})
-        response = self.authorized_client.get(reverse_name)
+           на других пользователей."""
+        response = self.authorized_client.get(
+            reverse('posts:profile', kwargs={'username': self.AUTHOR_2_NAME}))
         self.assertFalse(response.context.get('following'))
 
-        response = self.authorized_client.get(reverse_follow)
-        response = self.authorized_client.get(reverse_name)
+        response = self.authorized_client.get(
+            reverse('posts:profile_follow',
+                    kwargs={'username': self.AUTHOR_2_NAME})
+        )
+        response = self.authorized_client.get(
+            reverse('posts:profile', kwargs={'username': self.AUTHOR_2_NAME}))
         self.assertTrue(response.context.get('following'))
 
-        response = self.authorized_client.get(reverse_follow)
-        response = self.authorized_client.get(reverse_name)
+    def test_authorized_user_can_remove_follow(self):
+        """Авторизованный пользователь может отписываться
+           от других пользователей."""
+        response = self.authorized_client.get(
+            reverse('posts:profile', kwargs={'username': self.AUTHOR_NAME}))
         self.assertTrue(response.context.get('following'))
 
-        response = self.authorized_client.get(reverse_unfollow)
-        response = self.authorized_client.get(reverse_name)
+        response = self.authorized_client.get(
+            reverse('posts:profile_unfollow',
+                    kwargs={'username': self.AUTHOR_NAME})
+        )
+        response = self.authorized_client.get(
+            reverse('posts:profile', kwargs={'username': self.AUTHOR_NAME}))
         self.assertFalse(response.context.get('following'))
 
-        response = self.authorized_client.get(reverse_unfollow)
-        response = self.authorized_client.get(reverse_name)
-        self.assertFalse(response.context.get('following'))
-
-    def test_authorized_user_can_follow_other_users_and_remove(self):
+    def test_new_post_appears_in_desired_feed(self):
         """Новая запись пользователя появляется в ленте тех, кто
            на него подписан и не появляется в ленте тех, кто не подписан."""
-        tape_1_count = Post.objects.filter(author=self.author).count()
-        tape_2_count = Post.objects.filter(author=self.author_2).count()
-        self.assertEqual(tape_1_count, 2)
-        self.assertEqual(tape_2_count, 1)
+        response = self.authorized_client.get(reverse('posts:follow_index'))
+        posts_user_count = len(response.context['page_obj'])
+        self.assertEqual(posts_user_count, 2)
+
+        response = self.second_client.get(reverse('posts:follow_index'))        
+        posts_user_2_count = len(response.context['page_obj'])
+        self.assertEqual(posts_user_2_count, 1)
+
         Post.objects.create(
             text='Тестовое сообщение 4',
             author=self.author,
         )
-        new_tape_1_count = Post.objects.filter(author=self.author).count()
-        new_tape_2_count = Post.objects.filter(author=self.author_2).count()
-        self.assertEqual(new_tape_1_count, tape_1_count + 1)
-        self.assertEqual(new_tape_2_count, tape_2_count)
+        response = self.authorized_client.get(reverse('posts:follow_index'))
+        self.assertEqual(len(response.context['page_obj']),
+                         posts_user_count + 1)
+
+        response = self.second_client.get(reverse('posts:follow_index'))        
+        self.assertEqual(len(response.context['page_obj']),
+                         posts_user_2_count)
