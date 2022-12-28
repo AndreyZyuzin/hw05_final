@@ -325,7 +325,7 @@ class FollowTests(TestCase):
         posts_user_count = len(response.context['page_obj'])
         self.assertEqual(posts_user_count, 2)
 
-        response = self.second_client.get(reverse('posts:follow_index'))        
+        response = self.second_client.get(reverse('posts:follow_index'))
         posts_user_2_count = len(response.context['page_obj'])
         self.assertEqual(posts_user_2_count, 1)
 
@@ -337,6 +337,6 @@ class FollowTests(TestCase):
         self.assertEqual(len(response.context['page_obj']),
                          posts_user_count + 1)
 
-        response = self.second_client.get(reverse('posts:follow_index'))        
+        response = self.second_client.get(reverse('posts:follow_index'))
         self.assertEqual(len(response.context['page_obj']),
                          posts_user_2_count)
