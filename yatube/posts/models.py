@@ -2,6 +2,8 @@ from django.contrib.auth import get_user_model
 from django.db import models
 
 User = get_user_model()
+NUMBER_OF_FIRST_POST_CHARACTERS = 15
+NUMBER_OF_FIRST_COMMENT_CHARACTERS = 15
 
 
 class Group(models.Model):
@@ -72,7 +74,7 @@ class Post(models.Model):
     )
 
     def __str__(self):
-        return self.text[:15]
+        return self.text[:NUMBER_OF_FIRST_POST_CHARACTERS]
 
 
 class Comment(models.Model):
@@ -105,14 +107,19 @@ class Comment(models.Model):
     )
 
     def __str__(self):
-        return self.text[:15]
+        return self.text[:NUMBER_OF_FIRST_COMMENT_CHARACTERS]
 
 
 class Follow(models.Model):
     class Meta:
         verbose_name = 'Подписка'
         verbose_name_plural = 'Подписки'
-        unique_together = ('user', 'author')
+        constraints = [
+            models.UniqueConstraint(
+                fields=['user', 'author'],
+                name='unique_author_user',
+            )
+        ]
 
     user = models.ForeignKey(
         User,
