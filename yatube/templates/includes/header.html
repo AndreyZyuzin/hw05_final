@@ -1,8 +1,6 @@
 {% load static %}
 <nav 
-  class="navbar navbar-expand-lg navbar-light" 
-  style="background-color: lightskyblue"
->
+  class="navbar navbar-expand-lg navbar-light az-navbar">
   <div class="container">
     <a class="navbar-brand" href="{% url 'posts:index' %}">
       <img 
@@ -17,7 +15,7 @@
     </a>
 
     <button 
-      class="navbar-toggler" 
+      class="navbar-toggler az-z-index" 
       type="button" 
       data-bs-toggle="collapse" 
       data-bs-target="#navbarToggler01" 
@@ -28,10 +26,10 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarToggler01">
-      <ul class="nav nav-pills ms-auto flex-column flex-lg-row">
+    <div class="collapse d-lg-block w-100" id="navbarToggler01">
+      <ul class="row nav flex-column  align-items-center flex-lg-row g-3 text-center">
         {% with request.resolver_match.view_name as view_name %} 
-        <li class="nav-item"> 
+        <li class="nav-item col-auto"> 
           <a 
             class="nav-link {% if view_name == 'about:author' %}
                               active
@@ -39,14 +37,14 @@
             href="{% url 'about:author' %}"
           >Об авторе</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item col-auto">
           <a 
             class="nav-link {% if view_name == 'about:tech' %}active{% endif %}" 
             href="{% url 'about:tech' %}"
           >Технологии</a>
         </li>
         {% if request.user.is_authenticated %}
-        <li class="nav-item"> 
+        <li class="nav-item col-auto"> 
           <a 
             class="nav-link {% if view_name == 'posts:post_create' %}
                               active
@@ -54,35 +52,32 @@
             href="{% url 'posts:post_create' %}"
           >Новая запись</a>
         </li>
-        <li class="nav-item"> 
+        <li class="nav-item col-auto ms-lg-auto"> 
           <a 
             class="nav-link 
-                  {% if view_name == 'users:password_change' %}active{% endif %}
-                  link-light" 
+                  {% if view_name == 'users:password_change' %}active{% endif %}" 
             href="{% url 'users:password_change' %}"
           >Изменить пароль</a>
         </li>
-        <li class="nav-item"> 
+        <li class="nav-item col-auto"> 
           <a class="nav-link 
-                    {% if view_name == 'users:logout' %}active{% endif %}
-                    link-light" href="{% url 'users:logout' %}"
+                    {% if view_name == 'users:logout' %}active{% endif %}"
+             href="{% url 'users:logout' %}"
           >Выйти</a>
         </li>
-        <li>
-          <div class="nav-link">Пользователь: {{ user.username }}</div>
-        </li>
+        <li class="nav-link col-auto">{{ user.username }}</li>
         {% else %}
-        <li class="nav-item"> 
-          <a class="nav-link 
-                    {% if view_name == 'users:login' %}active{% endif %}
-                    link-light" href="{% url 'users:login' %}">
+        <li class="nav-item col-auto ms-lg-auto"> 
+          <a class="nav-link btn az-btn btn-color2
+                    {% if view_name == 'users:login' %}active{% endif %}"
+             href="{% url 'users:login' %}">
             Войти
           </a>
         </li>
-        <li class="nav-item"> 
-          <a class="nav-link 
-                    {% if view_name == 'users:signup' %}active{% endif %}
-                    link-light" href="{% url 'users:signup' %}">
+        <li class="nav-item col-auto"> 
+          <a class="nav-link btn az-btn btn-color2
+                    {% if view_name == 'users:signup' %}active{% endif %}"
+             href="{% url 'users:signup' %}">
             Регистрация
           </a>
         </li>
