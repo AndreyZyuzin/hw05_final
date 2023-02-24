@@ -2,166 +2,194 @@
 {% block title %}Немного обо мне{% endblock %}
 {% block content %}
 {% load static %}
-<h1>Немного обо мне</h1>
-<div class="row mb-4">
-  <div class="">
-    <div class="col-sm-4 float-start me-sm-4">
-      <img src="{% static 'img/about/author-2023-01-19.jpg' %}" class="d-block w-100" alt="Andrey Zyuzin">
+
+<div class="about_me card az-card p-3 p-md-2_5r" id="about_me">
+  <h1>Немного обо мне</h1>
+
+  <div class="row card-body p-0 mt-4 gx-3 gx-lg-5">
+    <div class="col-md-6 col-lg-5">
+      <picture>
+        <source srcset="{% static 'img/about/author-2023-01-19.jpg' %}"
+                type="image/svg+xml">
+        <img src="{% static 'img/about/author-2023-01-19.jpg' %}"
+             class="rounded-1r"
+             alt="Andrey Zyuzin">
+      </picture>
     </div>
-    <p>
-      Меня зовут Андрей Зюзин. Этот сайт создан
-      в качестве курсовой работы в рамках обучения 
-      по специальности "Python-разработчик".
-    </p>
-    <p>
-      Я закончил факультет: "Гидротехническое и специальное строительство" 
-      <a href="https://mgsu.ru/" target="_blank">
-        Московский государственный строительный университет
-      </a>
-      по специальности: "Гидротехническое строительство" в 2002 году. 
-    </p>
-    <p>
-      Более 20 лет работаю инженером-гидравликом. Раньше занимался 
-      физическим моделированием гидротехнических сооружений,
-      сейчас занимаюсь численным моделированием. Проще говоря, раньше 
-      я собирал и исследовал уменьшенные модели гидротехнических сооружений 
-      (шлюзов, водосбросов и т.д.), а сейчас такие же модели создаю 
-      и исследую на компьютере. Это интересная работа, 
-      но в ней не хватает возможностей для развития, а хочется двигаться вперёд.
-    </p>
-    <p>
-      Программированием занимался с начала 90-х, ещё на БK-0010-01.
-      Сколько себя помню, всегда интересовался этой темой.
-    </p>
-    <p>
-      С 2018 года решил параллельно с основной работой попробовать себя
-      в программировании на фрилансе. В основном мы создавали 
-      или дорабатывали простые сайты на Bitrix, WordPress, Tilda.
-      Самый экстравагантный проект, в котором я участвовал - разработка 
-      специализированного калькулятора теплоизоляции на VBA для Excel.
-    </p>
-    <p>
-      В 2022 году мы делали 
-      <a href="http://212.193.52.118:3873/" target="_blank">генетический калькулятор</a>
-      с помощью RESTful API на бэкэнде под Flask и фронтэнде на Vue. Я отвечал за клиентская часть.
-      Кроме того я развертывал и настраивал сервер.
-    </p>
-    <p>
-      В Яндекс.Практикум пришёл, потому что решил окончательно сменить 
-      сферу деятельности и вижу потенциал для дальнейшего развития в разработке web-приложений.
-    </p>
+    <div class="col-md-6 col-lg-7 mt-3 mt-md-0">
+      <div class="row flex-column g-0 h-100">
+        <div class="col card-text h-100 overflow-auto pe-3">
+          <p>
+            Меня зовут Андрей Зюзин. Этот сайт создан в качестве 
+            курсовой работы в рамках обучения 
+            по специальности «Python-разработчик».
+          </p>
+          <p>
+            Я закончил факультет «Гидротехническое и специальное строительство» 
+            <a href="https://mgsu.ru/" target="_blank"
+            >Московского государственного Строительного Университета</a>
+            по специальности: «Гидротехническое строительство» в 2002 году.
+          </p>
+          <p>
+            Более 20 лет работаю инженером-гидравликом. Раньше занимался 
+            физическим моделированием гидротехнических сооружений, 
+            сейчас занимаюсь численным vоделированием. Проще говоря, 
+            раньше я собирал и исследовал уменьшенные модели 
+            гидротехнических сооружений (шлюзов, водосбросов и т.д.),
+            а сейчас такие же модели создаю и исследую на компьютере. 
+            Это интересная работа, но в ней не хватает возможностей 
+            для развития, а хочется двигаться вперёд.
+          </p>
+          <p>
+            Программированием занимался с начала 90-х, ещё на БK-0010. 
+            Сколько себя помню, всегда интересовался этой темой.
+            С 2018 года решил параллельно с основной работой попробовать 
+            себя в программировании на фрилансе. В основном мы создавали 
+            или дорабатывали простые сайты на Bitrix, WordPress, Tilda. 
+            Самый экстравагантный проект, в котором я участвовал — разработка
+            специализированного калькулятора теплоизоляции на VBA для Excel.
+          </p>
+          <p>
+            В 2022 году мы делали 
+            <a href="http://212.193.52.118:3873/" target="_blank">генетический калькулятор</a>
+            с помощью RESTful API на бэкэнде под Flask и фронтэнде на Vue.
+            Я отвечал за клиентскую часть, кроме того,
+            я развёртывал и настраивал сервер.
+          </p>
+          <p>
+            В Яндекс.Практикум пришёл, потому что решил окончательно сменить
+            сферу деятельности и вижу перспективы для развития в Python и Jango.
+          </p>
+        </div>
+        <div class="col-auto social d-flex mt-4">
+          <a class="social-link" href="https://github.com/AndreyZyuzin" target="_blank">
+            <div class="social-item social-item-github me-3">
+              <div class="social-item-hovering"></div>
+              <svg width="26" height="27" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.3156 0.666748C11.6781 0.666748 10.0566 1.01162 8.54371 1.68169C7.03083 2.35175 5.65621 3.33388 4.4983 4.57199C2.15982 7.07248 0.846069 10.4639 0.846069 14.0001C0.846069 19.8934 4.42482 24.8934 9.37522 26.6667C9.99869 26.7734 10.1982 26.3601 10.1982 26.0001V23.7467C6.74415 24.5467 6.00845 21.9601 6.00845 21.9601C5.43485 20.4134 4.62433 20.0001 4.62433 20.0001C3.48961 19.1734 4.71162 19.2001 4.71162 19.2001C5.95857 19.2934 6.61945 20.5734 6.61945 20.5734C7.7043 22.6001 9.53732 22.0001 10.2481 21.6801C10.3603 20.8134 10.6845 20.2267 11.0337 19.8934C8.26543 19.5601 5.36003 18.4134 5.36003 13.3334C5.36003 11.8534 5.83387 10.6667 6.64439 9.72008C6.5197 9.38675 6.08326 8.00008 6.76909 6.20008C6.76909 6.20008 7.81653 5.84008 10.1982 7.56008C11.1833 7.26675 12.2557 7.12008 13.3156 7.12008C14.3755 7.12008 15.4479 7.26675 16.433 7.56008C18.8146 5.84008 19.8621 6.20008 19.8621 6.20008C20.5479 8.00008 20.1115 9.38675 19.9868 9.72008C20.7973 10.6667 21.2711 11.8534 21.2711 13.3334C21.2711 18.4267 18.3533 19.5467 15.5726 19.8801C16.0215 20.2934 16.433 21.1067 16.433 22.3467V26.0001C16.433 26.3601 16.6325 26.7867 17.2684 26.6667C22.2188 24.8801 25.7851 19.8934 25.7851 14.0001C25.7851 12.2491 25.4626 10.5153 24.8359 8.89764C24.2093 7.27996 23.2908 5.81011 22.1329 4.57199C20.975 3.33388 19.6003 2.35175 18.0875 1.68169C16.5746 1.01162 14.9531 0.666748 13.3156 0.666748Z" fill="black"/>
+              </svg>                
+            </div>
+          </a>
+          <a class="social-link" href="https://telegram.me/andrey_bp_zyuzin" target="_blank">
+            <div class="social-item social-item-telegram me-3">
+              <div class="social-item-hovering"></div>
+              <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M25.07 0.996043C24.749 1.0194 24.4339 1.09471 24.137 1.21904H24.133C23.848 1.33204 22.493 1.90204 20.433 2.76604L13.051 5.87504C7.754 8.10504 2.547 10.301 2.547 10.301L2.609 10.277C2.609 10.277 2.25 10.395 1.875 10.652C1.64332 10.7995 1.44397 10.9924 1.289 11.219C1.105 11.489 0.956997 11.902 1.012 12.329C1.102 13.051 1.57 13.484 1.906 13.723C2.246 13.965 2.57 14.078 2.57 14.078H2.578L7.461 15.723C7.68 16.426 8.949 20.598 9.25399 21.559C9.434 22.133 9.609 22.492 9.828 22.766C9.934 22.906 10.058 23.023 10.207 23.117C10.2845 23.1621 10.367 23.1977 10.453 23.223L10.403 23.211C10.418 23.215 10.43 23.227 10.441 23.231C10.481 23.242 10.508 23.246 10.559 23.254C11.332 23.488 11.953 23.008 11.953 23.008L11.988 22.98L14.871 20.355L19.703 24.062L19.813 24.109C20.82 24.551 21.84 24.305 22.379 23.871C22.922 23.434 23.133 22.875 23.133 22.875L23.168 22.785L26.902 3.65604C27.008 3.18404 27.035 2.74204 26.918 2.31304C26.7973 1.87887 26.5188 1.50545 26.137 1.26604C25.8164 1.07116 25.4447 0.977092 25.07 0.996043ZM24.969 3.04604C24.965 3.10904 24.977 3.10204 24.949 3.22304V3.23404L21.25 22.164C21.234 22.191 21.207 22.25 21.133 22.309C21.055 22.371 20.993 22.41 20.668 22.281L14.758 17.75L11.188 21.004L11.938 16.214L21.594 7.21404C21.992 6.84404 21.859 6.76604 21.859 6.76604C21.887 6.31204 21.258 6.63304 21.258 6.63304L9.082 14.176L9.078 14.156L3.242 12.191V12.187L3.227 12.184C3.23723 12.1806 3.24725 12.1766 3.257 12.172L3.289 12.156L3.32 12.145C3.32 12.145 8.531 9.94904 13.828 7.71904C16.48 6.60204 19.152 5.47704 21.207 4.60904C22.4257 4.09605 23.6457 3.58604 24.867 3.07904C24.949 3.04704 24.91 3.04604 24.969 3.04604Z" fill="black" stroke="black" stroke-width="0.7"/>
+              </svg>
+            </div>
+          </a>
+          <a class="social-link" href="mailto:andrey.bp.zyuzin@yandex.ru">
+            <div class="social-item sociallinks-item-email">     
+              <div class="social-item-hovering"></div>
+              <svg width="28" height="22" viewBox="0 0 28 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.33334 21.8471C2.6 21.8471 1.97245 21.5862 1.45067 21.0645C0.928005 20.5418 0.666672 19.9138 0.666672 19.1805V3.18046C0.666672 2.44713 0.928005 1.81957 1.45067 1.29779C1.97245 0.775127 2.6 0.513794 3.33334 0.513794H24.6667C25.4 0.513794 26.028 0.775127 26.5507 1.29779C27.0724 1.81957 27.3333 2.44713 27.3333 3.18046V19.1805C27.3333 19.9138 27.0724 20.5418 26.5507 21.0645C26.028 21.5862 25.4 21.8471 24.6667 21.8471H3.33334ZM24.6667 5.84713L14.7 12.0805C14.5889 12.1471 14.472 12.1969 14.3493 12.2298C14.2276 12.2636 14.1111 12.2805 14 12.2805C13.8889 12.2805 13.7724 12.2636 13.6507 12.2298C13.528 12.1969 13.4111 12.1471 13.3 12.0805L3.33334 5.84713V19.1805H24.6667V5.84713ZM14 9.84713L24.6667 3.18046H3.33334L14 9.84713ZM3.33334 6.18046V4.21379V4.24713V4.22979V6.18046Z" fill="#1F1C1C"/>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="">
-  <h5>Программистские навыки</h5>
-  {% for skill, value in skills.items %}
-    <div class="row align-items-center">
-      <div class="col-sm-4">
-        <div class="progress">
-          <div class="progress-bar" role="progressbar"
-               style="width: {{ value }}%;" aria-valuenow="{{ value }}" 
-               aria-valuemin="0" aria-valuemax="100"
-          >{{ value }}%</div>
-        </div>            
-      </div>
-      <div class="col-sm-8">
-        <h5>{{ skill }}</h5>
-      </div>
+
+<div class="skills row align-items-stretch gx-5 text-center" id="skills">
+  <div class="col col-md-10 offset-md-1 mx-auto col-lg-6 offset-lg-0 mt-5 mt-md-5r">
+    <div class="card az-card p-3 p-md-2_5r">
+      <h2 class="skills-title mb-4">Программистские навыки</h2>
+      {% for skill, value in skills.items %}
+        <div class="skills-prog">
+          <div class="position-relative">
+            <div class="skills-text position-absolute start-0">{{ skill }}</div>
+            <div class="skills-value position-absolute end-0">{{ value }}%</div>
+          </div>
+          <div class="skills-progress progress">
+            <div class="skills-progress-bar progress-bar"
+              role="progressbar" style="width: {{ value }}%;"
+              aria-valuenow="{{ value }}" aria-valuemin="0" aria-valuemax="100"
+            ></div>
+          </div>            
+        </div>
+      {% endfor %}
     </div>
-  {% endfor %}
-</div>
+  </div>
 
-
-<style>
-.svg_progress_bar{
-  transform: rotate(-90deg);
-}
-
-.svg_progress_bar__background {
-  fill: none;
-  stroke: #e2eff0;
-  stroke-width: 2;
-}
-
-.svg_progress_bar__progress {
-  fill: none;
-  stroke: #e2eff0;
-  stroke: #78bec7;
-  stroke-dasharray: 100 100;
-  stroke-dashoffset: 100;
-  stroke-linecap: round;
-  stroke-width: 2;
-  animation: changeProgressBar 2s;
-}
-
-.svg_progress_bar__progress:hover{
-  animation: changeProgressBar 2s;
-}
-.svg_progress_bar__text{
-  font-size: 3em;
-}
-@keyframes changeProgressBar{
-  0% {stroke-dashoffset: 100;}
-  50% {stroke-dashoffset: 100;}
-}
-</style>
 {% load lacksskill %}
-<div class="">
-  <h5>Программистские навыки</h5>
-  {% for skill, value in skills.items %}
-    <div class="row align-items-center">
-      <div class="col-sm-2 position-relative d-flex justify-content-center align-items-center">  
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34" class="svg_progress_bar">
+  <div class="col col-md-10 offset-md-1 mx-auto col-lg-6 offset-lg-0 mt-5 mt-md-5r">
+    <div class="card az-card p-3 p-md-2_5r">
+      <h2 class="skills-title">Дополнительные навыки</h2>
+      <div class="row px-xxl-5">
+      {% for skill, value in character_parameters.items %}
+          <div class="col-4 mt-4">
+            <div class="svg_progress__box">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" class="svg_progress__bar">
 
-          <circle cx="17" cy="17" r="15.9155"
-                class="svg_progress_bar__background" />
+                <circle cx="18" cy="18" r="15.9155"
+                      class="svg_progress_bar__background" />
+      
+                <circle cx="18" cy="18" r="15.9155"
+                      class="svg_progress_bar__progress" 
+                      style="stroke-dashoffset:{{ value|lacksskill }}"/>
+              </svg>
+              <div class="svg_progress_bar__text">{{ value }}%</div>    
+            </div>
 
-          <circle cx="17" cy="17" r="15.9155"
-                class="svg_progress_bar__progress" 
-                style="stroke-dashoffset:{{ value|lacksskill }}"/>
-        </svg>
-        <div class="svg_progress_bar__text position-absolute">{{ value }}%</div>
+            <div class="skills-text mt-2">{{ skill }}</div>
+          </div>
+      {% endfor %}
       </div>
+      <div class="row my-auto">
+        {% for skill in extra_skills %}
+        <div class="col-4 mt-4 d-flex align-items-center justify-content-center">
+          <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.28 16H2.84V2H12.44V0H2.84C1.7744 0 0.919998 0.89 0.919998 2V16C0.919998 16.5304 1.12228 17.0391 1.48235 17.4142C1.84242 17.7893 2.33078 18 2.84 18H16.28C16.7892 18 17.2776 17.7893 17.6376 17.4142C17.9977 17.0391 18.2 16.5304 18.2 16V8H16.28M5.6336 7.08L4.28 8.5L8.6 13L18.2 3L16.8464 1.58L8.6 10.17L5.6336 7.08Z" fill="#FF7A00"/>
+          </svg>
+          <div class="skills-text ms-2">{{ skill }}</div>
+        </div>
+        {% endfor %}
+          
+      </div>
+
     </div>
-  {% endfor %}
+  </div>
+
 </div>
 
-<div class="accordion" id="accordionPanels">
+
+<div class="accordion az-accordion mt-5 mt-md-5r" id="accordionPanels">
 
   <div class="accordion-item">
-    <h2 class="accordion-header" id="panel-example_sites">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse"
-              data-bs-target="#panel-example_sites-text"
-              aria-expanded="true" aria-controls="panel-example_sites-text"
-      >Примеры сайтов</button>
-    </h2>
+    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panel-example_sites-text"
+            aria-expanded="false" aria-controls="panel-example_sites-text">    
+      <h2 class="accordion-header" id="panel-example_sites">Примеры сайтов</h2>
+    </button>
     <div id="panel-example_sites-text" class="accordion-collapse collapse show"
         aria-labelledby="panel-example_sites" data-bs-parent="#accordionPanels">
       <div class="accordion-body row">
 
-        <div class="col-md-6 col-lg-3">
+        <div class="col-md-6 col-lg-3 mb-3">
           <a href="https://www.tsenovik.ru/" target="_blank">
             <img src="{% static 'img/about/p002.jpg' %}" class="d-block w-100"
                  loading="lazy" alt="...">
           </a>
         </div>
         
-        <div class="col-md-6 col-lg-3">
+        <div class="col-md-6 col-lg-3 mb-3">
           <a href="http://mosdecorator.ru/arenda-dekora" target="_blank">
             <img src="{% static 'img/about/p004.jpg' %}" class="d-block w-100"
                  loading="lazy" alt="...">
           </a>
         </div>
 
-        <div class="col-md-6 col-lg-3">
+        <div class="col-md-6 col-lg-3 mb-3">
           <a href="https://altatec.ru/" target="_blank">
             <img src="{% static 'img/about/p003.jpg' %}" class="d-block w-100"
                  loading="lazy" alt="...">
           </a>
         </div>
 
-        <div class="col-md-6 col-lg-3">
+        <div class="col-md-6 col-lg-3 mb-3">
           <a href="https://rizolin.su/" target="_blank">
             <img src="{% static 'img/about/p001.jpg' %}" class="d-block w-100"
                  loading="lazy" alt="...">
@@ -172,13 +200,12 @@
     </div>
   </div>
 
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="panel-courses">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse"
-              data-bs-target="#panel-courses-text" aria-expanded="true"
-              aria-controls="panel-courses-text"
-      >Курсы</button>
-    </h2>
+  <div class="accordion-item mt-4">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#panel-courses-text" aria-expanded="true"
+      aria-controls="panel-courses-text">
+      <h2 class="accordion-header" id="panel-courses">Курсы</h2>
+    </button>
     <div id="panel-courses-text" class="accordion-collapse collapse"
          aria-labelledby="panel-courses" data-bs-parent="#accordionPanels">
       <div class="accordion-body">
@@ -245,13 +272,12 @@
     </div>
   </div>
 
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="panel-zeya">
-      <button class="accordion-button" type="button"
+  <div class="accordion-item mt-4">
+      <button class="accordion-button collapsed" type="button"
               data-bs-toggle="collapse" data-bs-target="#panel-zeya-text"
-              aria-expanded="true" aria-controls="panel-zeya-text"
-      >Физическое моделирование</button>
-    </h2>
+              aria-expanded="true" aria-controls="panel-zeya-text">
+        <h2 class="accordion-header" id="panel-zeya">Физическое моделирование</h2>
+      </button>
     <div id="panel-zeya-text" class="accordion-collapse collapse"
         aria-labelledby="panel-zeya" data-bs-parent="#accordionPanels">
       <div class="accordion-body row align-items-center">
@@ -272,7 +298,7 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img src="{% static 'img/about/0002.jpg' %}" class="d-block w-100"
-                   loading="lazy" alt="...">
+                   alt="...">
               <div class="carousel-caption d-none d-md-block">
                 <h5>Модель водосброса</h5>
               </div>
@@ -313,35 +339,34 @@
     </div>
   </div>
 
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="panel-numerical_simulation">
-      <button class="accordion-button" type="button"
-              data-bs-toggle="collapse" data-bs-target="#panel-numerical_simulation-text"
-              aria-expanded="true" aria-controls="panel-numerical_simulation-text"
-      >Численное моделирование</button>
-    </h2>
+  <div class="accordion-item mt-4 numerical_simulation">
+    <button class="accordion-button collapsed" type="button"
+            data-bs-toggle="collapse" data-bs-target="#panel-numerical_simulation-text"
+            aria-expanded="true" aria-controls="panel-numerical_simulation-text">
+      <h2 class="accordion-header" id="panel-numerical_simulation">Численное моделирование</h2>
+    </button>
     <div id="panel-numerical_simulation-text" class="accordion-collapse collapse"
-        aria-labelledby="panel-numerical_simulation" data-bs-parent="#accordionPanels">
+         aria-labelledby="panel-numerical_simulation" data-bs-parent="#accordionPanels">
       <div class="accordion-body">
         <div class="row align-items-center">
-          <div class="col-lg-7">
+          <div class="col-lg-7 mb-4">
             <h5 class="text-center">Водобойный колодец</h5>
             <img src="{% static 'img/about/0041.png' %}" class="d-block w-100"
                  loading="lazy" alt="...">
           </div>
-          <div class="col-lg-5">
+          <div class="col-lg-5 mb-4">
             <img src="{% static 'img/about/0042.png' %}" class="d-block w-100"
                  loading="lazy" alt="...">
           </div>
         </div>
         <div class="row align-items-center">
-          <div class="col-lg-6">
+          <div class="col-lg-6 mb-4">
             <h5 class="text-center">Температурный режим</h5>
             <video controls>
               <source src="{% static 'img/about/0051.mp4' %}" type="video/mp4">
             </video>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-6 mb-4">
             <h5 class="text-center">Пропуск рыбы</h5>
             <video controls>
               <source src="{% static 'img/about/0061.mp4' %}" type="video/mp4">

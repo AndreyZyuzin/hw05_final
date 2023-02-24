@@ -14,6 +14,19 @@ class AboutAuthorView(TemplateView):
             'Vue': 60,
             'Верстка': 90,
         }
+        context['extra_skills'] = (
+            'AutoCAD   ',
+            'Blender',
+            'Inkscape',
+            'FlowVision',
+            'Flow-3d',
+            'Gimp       ',
+        )
+        context['character_parameters'] = {
+            'Ответст­­­­­­венность': 85,
+            'Обучае­­мость': 90,
+            'Эффектив­­­ность': 86,
+        }
         return context
 
 
